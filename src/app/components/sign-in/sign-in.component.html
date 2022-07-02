@@ -1,0 +1,45 @@
+<mat-grid-list cols="1" rowHeight="80%">
+  <mat-grid-tile>
+    <div fxLayout="column">
+      <h3>Sign In</h3>
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput type="text" placeholder="Username" #userName required>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" placeholder="Password" #userPassword required>
+      </mat-form-field>
+      <!-- Calling SignIn Api from AuthService -->
+      <div class="formGroup">
+        <input type="button" class="btn btnPrimary" value="Log in"
+          (click)="authService.SignIn(userName.value, userPassword.value)">
+      </div>
+      <div class="formGroup">
+        <span class="or"><span class="orInner">Or</span></span>
+      </div>
+      <!-- Calling GoogleAuth Api from AuthService -->
+      <div class="formGroup">
+        <button type="button" class="btn googleBtn" (click)="authService.GoogleAuth()">
+          <i class="fab fa-google-plus-g"></i>
+          Log in with Google
+        </button>
+      </div>
+      <div class="forgotPassword">
+        <span routerLink="/forgot-password">Forgot Password?</span>
+      </div>
+    </div>
+    <div class="redirectToLogin">
+      <span>Don't have an account?<span class="redirect" routerLink="/register-user"> Sign Up</span></span>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>
+
+
+
+
+<div class="displayTable">
+  <div class="displayTableCell">
+
+  </div>
+</div>
