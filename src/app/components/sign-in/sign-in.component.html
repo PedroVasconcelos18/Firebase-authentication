@@ -1,7 +1,8 @@
-<mat-grid-list cols="1" rowHeight="80%">
+<mat-grid-list cols="1" rowHeight="100%">
   <mat-grid-tile>
-    <div fxLayout="column">
+    <div fxLayout="column" style="border: 1px solid grey;">
       <h3>Sign In</h3>
+
       <mat-form-field appearance="fill">
         <mat-label>Email</mat-label>
         <input matInput type="text" placeholder="Username" #userName required>
@@ -10,27 +11,32 @@
         <mat-label>Password</mat-label>
         <input matInput type="password" placeholder="Password" #userPassword required>
       </mat-form-field>
+
       <!-- Calling SignIn Api from AuthService -->
-      <div class="formGroup">
-        <input type="button" class="btn btnPrimary" value="Log in"
-          (click)="authService.SignIn(userName.value, userPassword.value)">
-      </div>
-      <div class="formGroup">
-        <span class="or"><span class="orInner">Or</span></span>
-      </div>
-      <!-- Calling GoogleAuth Api from AuthService -->
-      <div class="formGroup">
-        <button type="button" class="btn googleBtn" (click)="authService.GoogleAuth()">
-          <i class="fab fa-google-plus-g"></i>
-          Log in with Google
-        </button>
+      <div fxFlexAlign="center" fxLayout="column" fxLayoutAlign="space-around center">
+        <div>
+          <button mat-stroked-button color="primary" type="button"
+            (click)="authService.SignIn(userName.value, userPassword.value)">
+            Log in
+          </button>
+        </div>
+        <div fxFlexAlign="center">
+          <span>Or</span>
+        </div>
+        <!-- Calling GoogleAuth Api from AuthService -->
+        <div>
+          <button mat-stroked-button color="primary" type="button" (click)="authService.GoogleAuth()">
+            <fa-icon [icon]="faGoogle"></fa-icon>
+            Log in with Google
+          </button>
+        </div>
       </div>
       <div class="forgotPassword">
         <span routerLink="/forgot-password">Forgot Password?</span>
       </div>
-    </div>
-    <div class="redirectToLogin">
-      <span>Don't have an account?<span class="redirect" routerLink="/register-user"> Sign Up</span></span>
+      <div class="redirectToLogin">
+        <span>Don't have an account?<span class="redirect" routerLink="/register-user"> Sign Up</span></span>
+      </div>
     </div>
   </mat-grid-tile>
 </mat-grid-list>

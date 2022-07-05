@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // -- FireBase -- \\
 import { initializeApp } from 'firebase/app';
@@ -23,15 +24,18 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 // -- Service -- \\
 import { AuthService } from './shared/services/auth.service';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // -- Angular Material -- \\
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 
 // -- Angular Flex Layout -- \\
 import { FlexLayoutModule } from '@angular/flex-layout';
+
+// -- Font Awesome Icon -- \\
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -57,6 +61,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatFormFieldModule,
     MatInputModule,
     FlexLayoutModule,
+    MatButtonModule,
+    FontAwesomeModule,
   ],
   providers: [
     AuthService,

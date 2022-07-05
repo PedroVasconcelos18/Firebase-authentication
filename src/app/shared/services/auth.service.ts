@@ -32,6 +32,7 @@ export class AuthService {
       }
     });
   }
+
   // Sign in with email and pass
   SignIn(email: string, pass: string) {
     return this.angularFireAuth
