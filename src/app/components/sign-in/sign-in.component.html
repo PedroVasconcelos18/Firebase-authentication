@@ -1,15 +1,15 @@
-<mat-grid-list cols="1" rowHeight="100%">
+<mat-grid-list cols="1" rowHeight="100%" class="body">
   <mat-grid-tile>
-    <div fxLayout="column" style="border: 1px solid grey;">
+    <div fxLayout="column" class="containerBorder">
       <h3>Sign In</h3>
 
-      <mat-form-field appearance="fill">
+      <mat-form-field appearance="outline">
         <mat-label>Email</mat-label>
-        <input matInput type="text" placeholder="Username" #userName required>
+        <input matInput type="text" #userName required>
       </mat-form-field>
-      <mat-form-field appearance="fill">
+      <mat-form-field appearance="outline">
         <mat-label>Password</mat-label>
-        <input matInput type="password" placeholder="Password" #userPassword required>
+        <input matInput type="password" #userPassword required>
       </mat-form-field>
 
       <!-- Calling SignIn Api from AuthService -->
@@ -26,15 +26,15 @@
         <!-- Calling GoogleAuth Api from AuthService -->
         <div>
           <button mat-stroked-button color="primary" type="button" (click)="authService.GoogleAuth()">
-            <fa-icon [icon]="faGoogle"></fa-icon>
+            <img class="iconSize" src="../../../assets/images/googleIcon.svg">
             Log in with Google
           </button>
         </div>
       </div>
-      <div class="forgotPassword">
+      <div style="margin-top: 30px;">
         <span routerLink="/forgot-password">Forgot Password?</span>
       </div>
-      <div class="redirectToLogin">
+      <div>
         <span>Don't have an account?<span class="redirect" routerLink="/register-user"> Sign Up</span></span>
       </div>
     </div>
