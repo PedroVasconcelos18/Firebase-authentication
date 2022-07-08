@@ -5,6 +5,10 @@
   background-color: #ffffff;
 }
 
+.buttonCircle {
+  border-radius: 10px;
+}
+
 .body {
   background-color: #efefefc6;
 }
@@ -41,6 +45,11 @@
   color: #1cb11c;
 }
 
+.mat-fab {
+  width: 40px;
+  height: 40px;
+  background-color: #ffffff;
+}
 
 .iconSize {
   width: 20px;

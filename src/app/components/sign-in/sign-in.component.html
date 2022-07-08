@@ -14,28 +14,31 @@
 
       <!-- Calling SignIn Api from AuthService -->
       <div fxFlexAlign="center" fxLayout="column" fxLayoutAlign="space-around center">
-        <div>
+        <div style="padding-bottom: 5px;">
           <button mat-stroked-button color="primary" type="button"
             (click)="authService.SignIn(userName.value, userPassword.value)">
             Log in
           </button>
         </div>
-        <div fxFlexAlign="center">
+        <div fxFlexAlign="center" style="padding-bottom: 5px;">
           <span>Or</span>
         </div>
         <!-- Calling GoogleAuth Api from AuthService -->
         <div>
-          <button mat-stroked-button color="primary" type="button" (click)="authService.GoogleAuth()">
+          <button mat-fab type="button" (click)="authService.GoogleAuth()">
             <img class="iconSize" src="../../../assets/images/googleIcon.svg">
-            Log in with Google
           </button>
         </div>
       </div>
-      <div style="margin-top: 30px;">
-        <span routerLink="/forgot-password">Forgot Password?</span>
+      <div style="margin: 10px 0px 5px 0px;">
+        <span routerLink="/forgot-password" style="cursor: pointer;">Forgot Password?</span>
       </div>
       <div>
-        <span>Don't have an account?<span class="redirect" routerLink="/register-user"> Sign Up</span></span>
+        <span>Don't have an account?
+          <span routerLink="/register-user">
+            <b style="cursor: pointer;"> Sign Up</b>
+          </span>
+        </span>
       </div>
     </div>
   </mat-grid-tile>
